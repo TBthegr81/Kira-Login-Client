@@ -211,7 +211,7 @@ JLabel l_status;
                             +"\nKlienten känner av vilken användare som loggat in i domänen,"
                             +"\ndu behöver endast ange ett lösenord som kommer att skickas krypterat direkt till \"bruse\"."
                             +"\nDetta är en av de tidigaste versionerna utav klienten som jag själv använder."
-                            +"\nAll kod är handskriven i JAVA, och fungerar oavsett system. Använd dock inte OpenJDK i Linuxsystem."
+                            +"\nAll kod är handskriven i JAVA, och fungerar oavsett system."
                             +"\nFinns tillgänglig på GITHUB via https://github.com/Kira9204/Kira-Login-Client/"
                             +"\nKontakta mig annars via proxxi gruppen @ facebook";
             String title = "Om Kira Login Client for PROXXI";
