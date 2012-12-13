@@ -38,7 +38,7 @@ import javax.swing.SwingConstants;
 
 public class Kira_Login_Client extends JFrame implements ActionListener{
 //APPLICATION PROPERTIES
-private final int WINDOW_WIDTH = 316;
+private final int WINDOW_WIDTH = 346;
 private final int WINDOW_HEIGHT = 325;
 private final Color bg_color = new Color(39,43,57);
 private final Color ok_color = new Color(36,148,69);
@@ -76,7 +76,6 @@ JLabel l_status;
         jframe.setSize(WINDOW_HEIGHT, WINDOW_WIDTH);    //Set the applications GUI window size
         jframe.setDefaultCloseOperation(EXIT_ON_CLOSE); //Close the application when pressing X
         jframe.setLocationRelativeTo(null);     //Center the window
-        //jframe.setResizable(false);
         jframe.setTitle("Kira Login Client for PROXXI");    //Set the Window title
         
         //Code for adding a menu bar
@@ -207,7 +206,7 @@ JLabel l_status;
                             +"\nVersion 212-12-13 (BETA)"
                             +"\nSyfte: Detta program har jag skapat för att underlätta det för PROXXIs"
                             +"\nalla medlemmar med syfte att förbättra deras inloggnins och internet upplevelse."
-                            +"\n\nAnvändare behöver nu INTE konstant ha en webbläsare med \"bruses\" hemsida uppe för att få internetåtkomst."
+                            +"\n\nAnvändaren behöver nu INTE konstant ha en webbläsare med \"bruses\" hemsida uppe för att få internetåtkomst."
                             +"\nKlienten känner av vilken användare som loggat in i domänen,"
                             +"\ndu behöver endast ange ett lösenord som kommer att skickas krypterat direkt till \"bruse\"."
                             +"\nDetta är en av de tidigaste versionerna utav klienten som jag själv använder."
