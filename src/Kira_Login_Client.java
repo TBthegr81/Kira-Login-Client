@@ -44,7 +44,7 @@ private final Color bg_color = new Color(39,43,57);
 private final Color ok_color = new Color(36,148,69);
 private Timer update_timer = new Timer(3000,this);
 private Timer logout_timer = new Timer(1000,this);
-private int logout_time_left = 5;
+private int logout_time_left = 3;
 
 //MENU BAR PUBLIC VARIABLES
 JMenuItem m_about;
@@ -177,7 +177,7 @@ JLabel l_status;
         }
         else if(ev.getSource() == bt_logout){
             l_status.setForeground(Color.red);
-            l_status.setText("Loggar ut användaren om: "+logout_time_left+" sek");
+            l_status.setText("<html>Loggar ut datorn om:<br> "+logout_time_left+" sek</html>");
             logout_timer.start();
         }
         else if(ev.getSource() == update_timer){
@@ -198,7 +198,7 @@ JLabel l_status;
             }
             else{
                 --logout_time_left;
-                l_status.setText("Loggar ut användaren om: "+logout_time_left+" sek");
+                l_status.setText("<html>Loggar ut datorn om:<br> "+logout_time_left+" sek</html>");
             }
         }
         else if(ev.getSource() == m_about){
