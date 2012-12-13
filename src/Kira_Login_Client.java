@@ -203,7 +203,7 @@ JLabel l_status;
         }
         else if(ev.getSource() == m_about){
             String message = "Kira Login Client for PROXXI"
-                            +"\nVersion 212-12-13 (BETA)"
+                            +"\nVersion 212-12-13"
                             +"\nSyfte: Detta program har jag skapat för att underlätta det för PROXXIs"
                             +"\nalla medlemmar med syfte att förbättra deras inloggnins och internet upplevelse."
                             +"\n\nAnvändaren behöver nu INTE konstant ha en webbläsare med \"bruses\" hemsida uppe för att få internetåtkomst."
