@@ -212,7 +212,7 @@ JLabel l_status;
             bt_login.setEnabled(false);
         }
         else if(ev.getSource() == update_timer){
-            String result[] = libKira_Login_Client.performHttpsPOST("https://bruse.proxxi.org?do=login", "iso-8859-1", "uname", tf_username.getText(), "pass", ptf_password.getText());
+            String result[] = libKira_Login_Client.accessHTTPS("https://bruse.proxxi.org/index.php");
                 if(!result[0].equals("OK")){
                     l_status.setForeground(Color.red);
                     l_status.setText("FEL: Servern svarade inte på förfrågan...");
@@ -222,7 +222,7 @@ JLabel l_status;
         else if(ev.getSource() == logout_timer){
             if(logout_time_left == 0){
                 try {
-                    libKira_Login_Client.performHttpsPOST("https://bruse.proxxi.org/index.php?do=logout", "iso-8859-1", "", "", "", "");
+                    libKira_Login_Client.accessHTTPS("https://bruse.proxxi.org/index.php?do=logout");
                     Process p = Runtime.getRuntime().exec("shutdown -l");
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(null, ex,"Ett fel inträffade",JOptionPane.WARNING_MESSAGE);
@@ -235,7 +235,7 @@ JLabel l_status;
         }
         else if(ev.getSource() == m_about){
             String message = "Kira Login Client for PROXXI"
-                            +"\nVersion 2102-12-16 (rev 2)"
+                            +"\nVersion 2102-12-16 (rev 3)"
                             +"\nSkapare: Kira (Erik Welander)"
                             +"\nSyfte: Detta program har jag skapat för att underlätta det för PROXXIs"
                             +"\nalla medlemmar med syfte att förbättra deras inloggnins och internet upplevelse."
