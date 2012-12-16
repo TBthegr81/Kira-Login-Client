@@ -43,7 +43,6 @@ public class libKira_Login_Client {
     public static String[] performHttpsPOST(String s_url, String encoding,
                                       String username_php_var, String username,
                                       String password_php_var, String password){
-
     //This will be the final query to be sent
     String query = "";
     //This string will be returned so that we can parse results.
@@ -97,7 +96,6 @@ public class libKira_Login_Client {
     } //End of performHttpsPOST()
     
    public static String[] accessHTTPS(String s_url){
-
     //This string will be returned so that we can parse results.
     //ID 0 represents the result code, and ID 1 the html response
     String[] result = new String[2];

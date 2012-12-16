@@ -212,7 +212,7 @@ JLabel l_status;
             bt_login.setEnabled(false);
         }
         else if(ev.getSource() == update_timer){
-            String result[] = libKira_Login_Client.accessHTTPS("https://bruse.proxxi.org/index.php");
+            String result[] = libKira_Login_Client.accessHTTPS("https://bruse.proxxi.org/keep-alive.php");
                 if(!result[0].equals("OK")){
                     l_status.setForeground(Color.red);
                     l_status.setText("FEL: Servern svarade inte på förfrågan...");
