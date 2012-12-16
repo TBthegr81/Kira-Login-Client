@@ -27,7 +27,7 @@ public class libKira_Login_Client {
                 result = sc.nextLine();
                 if(result.indexOf("inloggad som") != -1){
                     running = false;
-                    result = result.substring(4,result.length()-4);
+                    result = result.substring(4);
                 }
             }
             sc.close();

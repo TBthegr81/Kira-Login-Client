@@ -234,7 +234,7 @@ JLabel l_status;
         }
         else if(ev.getSource() == m_about){
             String message = "Kira Login Client for PROXXI"
-                            +"\nVersion 2102-12-16"
+                            +"\nVersion 2102-12-16 (rev 2)"
                             +"\nSkapare: Kira (Erik Welander)"
                             +"\nSyfte: Detta program har jag skapat för att underlätta det för PROXXIs"
                             +"\nalla medlemmar med syfte att förbättra deras inloggnins och internet upplevelse."
