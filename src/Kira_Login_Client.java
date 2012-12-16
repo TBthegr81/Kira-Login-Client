@@ -80,6 +80,7 @@ JLabel l_status;
         jframe.setDefaultCloseOperation(EXIT_ON_CLOSE); //Close the application when pressing X
         jframe.setLocationRelativeTo(null);     //Center the window
         jframe.setTitle("PROXXI internet login client");    //Set the Window title
+        jframe.setResizable(false);
         
         //Code for adding a menu bar
         JMenuBar menubar = new JMenuBar();
