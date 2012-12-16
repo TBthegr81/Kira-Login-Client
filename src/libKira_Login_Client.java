@@ -1,4 +1,14 @@
-
+/*
+ * Kira_Login_Client
+ * @Authur: Erik Welander
+ * @Version: 2012-12-16
+ * @JRE: JDK 1.6.0_32 X64
+ * @Encoding: UTF-8
+ * @IDE: Netbeans 7.2.1
+ * 
+ * Description: A GUI client that handles internet login and access to everyone inside the
+ * "PROXXI" domain by Erik Welander, see https://github.com/Kira9204/Kira-Login-Client/
+ */
 import com.sun.net.ssl.HttpsURLConnection;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -10,20 +20,22 @@ import java.util.Scanner;
 public class libKira_Login_Client {
     public static String getRealName(String data){
         Scanner sc = new Scanner(data);
-        String result;
+        String result = "";
+        boolean running = true;
         try{
-            for(int i = 0; i < 43; i++){
-                sc.nextLine();
+            while(running){
+                result = sc.nextLine();
+                if(result.indexOf("inloggad som") != -1){
+                    running = false;
+                    result = result.substring(4,result.length()-4);
+                }
             }
-            String full = sc.nextLine();
             sc.close();
-            full = full.substring(4);
-            
-            sc = new Scanner(full);
-            result = sc.next() + " " + sc.next();
+            sc = new Scanner(result);
+            result = sc.next() +" " +sc.next();
         }
         catch(Exception ex){
-            result = "F";
+            result = "";
         }
         return result;
     }
