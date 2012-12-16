@@ -43,9 +43,9 @@ private final int WINDOW_WIDTH = 346;
 private final int WINDOW_HEIGHT = 325;
 private final Color bg_color = new Color(39,43,57);
 private final Color ok_color = new Color(36,148,69);
-private Timer update_timer = new Timer(3000,this);
+private Timer update_timer = new Timer(30000,this);
 private Timer logout_timer = new Timer(1000,this);
-private Timer login_delay_timer = new Timer(10,this);
+private Timer login_delay_timer = new Timer(100,this);
 private int logout_time_left = 3;
 
 //MENU BAR PUBLIC VARIABLES
@@ -135,9 +135,9 @@ JLabel l_status;
         bt_logout.setPreferredSize(new Dimension(100,30));
         bt_logout.addActionListener(this);
         
-        bt_full_logout = new JButton("Logga ut helt");
+        bt_full_logout = new JButton("Logga ut datorn");
         bt_full_logout.setForeground(Color.blue);
-        bt_full_logout.setPreferredSize(new Dimension(100,30));
+        bt_full_logout.setPreferredSize(new Dimension(120,30));
         bt_full_logout.addActionListener(this);
         
         //Code for adding the objects to labels
