@@ -217,7 +217,7 @@ JLabel l_status;
             String result[] = libKira_Login_Client.accessHTTPS("https://bruse.proxxi.org/keep-alive.php");
                 if(!result[0].equals("OK")){
                     l_status.setForeground(Color.red);
-                    l_status.setText("FEL: Servern svarade inte på förfrågan...");
+                    l_status.setText("<html>FEL: Servern svarade<br> inte på förfrågan...</html>");
                     update_timer.stop();
                     bt_logout.setEnabled(false);
                     bt_login.setEnabled(true);
