@@ -1,7 +1,7 @@
 /*
  * Kira_Login_Client
  * @Authur: Erik Welander
- * @Version: 2012-12-16
+ * @Version: 2012-12-17
  * @JRE: JDK 1.6.0_32 X64
  * @Encoding: UTF-8
  * @IDE: Netbeans 7.2.1
@@ -39,8 +39,9 @@ import javax.swing.SwingConstants;
 
 public class Kira_Login_Client extends JFrame implements ActionListener{
 //APPLICATION PROPERTIES
-private final int WINDOW_WIDTH = 346;
-private final int WINDOW_HEIGHT = 325;
+private final String version = "2012-12-17";
+private final int WINDOW_WIDTH = 365;
+private final int WINDOW_HEIGHT = 346;
 private final Color bg_color = new Color(39,43,57);
 private final Color ok_color = new Color(36,148,69);
 private Timer update_timer = new Timer(30000,this);
@@ -76,10 +77,10 @@ JLabel l_status;
         }
         //Code for setting up the basics for the JFrame
         JFrame jframe = new JFrame();
-        jframe.setSize(WINDOW_HEIGHT, WINDOW_WIDTH);    //Set the applications GUI window size
+        jframe.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);    //Set the applications GUI window size
         jframe.setDefaultCloseOperation(EXIT_ON_CLOSE); //Close the application when pressing X
         jframe.setLocationRelativeTo(null);     //Center the window
-        jframe.setTitle("PROXXI internet login client");    //Set the Window title
+        jframe.setTitle("PROXXI Internet Login Client V "+version);    //Set the Window title
         jframe.setResizable(false);
         
         //Code for adding a menu bar
@@ -173,6 +174,7 @@ JLabel l_status;
             login_delay_timer.start();
         }
         else if(ev.getSource() == login_delay_timer){
+            login_delay_timer.stop();
             String result[] = libKira_Login_Client.performHttpsPOST("https://bruse.proxxi.org?do=login", "iso-8859-1", "uname", tf_username.getText(), "pass", ptf_password.getText());
             if(result[0].equals("OK")){
                 String real_name = libKira_Login_Client.getRealName(result[1]);
@@ -187,6 +189,7 @@ JLabel l_status;
                     update_timer.stop();
                     bt_login.setEnabled(true);
                 }
+                ptf_password.setText("");
             }
             else{
                 l_status.setForeground(Color.red);
@@ -194,7 +197,6 @@ JLabel l_status;
                 update_timer.stop();
                 bt_login.setEnabled(true);
             }
-            login_delay_timer.stop();
         }
         else if(ev.getSource() == bt_logout){
             l_status.setForeground(Color.red);
@@ -217,6 +219,8 @@ JLabel l_status;
                     l_status.setForeground(Color.red);
                     l_status.setText("FEL: Servern svarade inte på förfrågan...");
                     update_timer.stop();
+                    bt_logout.setEnabled(false);
+                    bt_login.setEnabled(true);
                 }
         }
         else if(ev.getSource() == logout_timer){
@@ -225,7 +229,8 @@ JLabel l_status;
                     libKira_Login_Client.accessHTTPS("https://bruse.proxxi.org/index.php?do=logout");
                     Process p = Runtime.getRuntime().exec("shutdown -l");
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, ex,"Ett fel inträffade",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,"Error: Runtime.getRuntime().exec(\"shutdown -l\")\n"
+                            +ex+"\n\nOm felet består, kontakta Erik Welander(Kira) via proxxigruppen @ Facebook","Ett fel inträffade",JOptionPane.WARNING_MESSAGE);
                 }
             }
             else{
@@ -235,7 +240,7 @@ JLabel l_status;
         }
         else if(ev.getSource() == m_about){
             String message = "Kira Login Client for PROXXI"
-                            +"\nVersion 2102-12-16 (rev 3)"
+                            +"\nVersion: "+version
                             +"\nSkapare: Kira (Erik Welander)"
                             +"\nSyfte: Detta program har jag skapat för att underlätta det för PROXXIs"
                             +"\nalla medlemmar med syfte att förbättra deras inloggnins och internet upplevelse."

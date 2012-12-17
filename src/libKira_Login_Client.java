@@ -1,7 +1,7 @@
 /*
  * Kira_Login_Client
  * @Authur: Erik Welander
- * @Version: 2012-12-16
+ * @Version: 2012-12-17
  * @JRE: JDK 1.6.0_32 X64
  * @Encoding: UTF-8
  * @IDE: Netbeans 7.2.1
@@ -15,6 +15,7 @@ import java.io.DataOutputStream;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class libKira_Login_Client {
@@ -89,7 +90,7 @@ public class libKira_Login_Client {
         da_input.close(); 
 
     }catch(Exception ex){
-        System.err.println("ERROR: performHttpsPOST() : "+ex);
+        JOptionPane.showMessageDialog(null,"ERROR: performHttpsPOST("+s_url+")\n"+ex+"\n\n Om felet består, kontakta Erik Welander(Kira) via proxxigruppen @ Facebook", "Ett fel uppstod", JOptionPane.WARNING_MESSAGE);
     }
 
     return result;
@@ -126,7 +127,7 @@ public class libKira_Login_Client {
         da_input.close(); 
 
     }catch(Exception ex){
-        System.err.println("ERROR: accessHTTPS() : "+ex);
+        JOptionPane.showMessageDialog(null,"ERROR: accessHTTPS("+s_url+")\n"+ex+"\n\n Om felet består, kontakta Erik Welander(Kira) via proxxigruppen @ Facebook", "Ett fel uppstod", JOptionPane.WARNING_MESSAGE);
     }
 
     return result;
